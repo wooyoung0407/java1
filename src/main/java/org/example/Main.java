@@ -5,95 +5,128 @@ import java.sql.SQLOutput;
 public class Main {
     public static void main(String[] args) {
 
-//        int i = 100;
+//        int[] arr = new int[3];
 //
-//        while(i > 0){
-//            System.out.println(i);
-//            i--;
-//        }
-
-        for(int i = 100; i > 0 ; i--){
-            System.out.println(i);
-        }
-
-
-
-
-
-
-//        int dan = 8;
+//        arr[0] = 11;
+//        arr[1] = 123;
+//        arr[2] = 1234;
 //
-////        int i = 1;
-////
-////        while (i <= 1000) {
-////            System.out.println(dan + " * " + i + " = " + dan * i);
-////            i++;
-////        }
+//        System.out.println(arr[0]);
+//        System.out.println(arr[1]);
+//        System.out.println(arr[2]);
+
+
+//        int[] arr1 = {1, 2, 3}; // new int[3];(배열의 수만 선언)
 //
-//        for (int i = 1; i <= 1000; i++) {
-//            System.out.println(dan + " * " + i + " = " + dan * i);
-//        }
-
-
-        // 출력
-    /*
-    8 * 1 = 8
-    8 * 2 = 16
-    8 * 3 = 24
-    8 * 4 = 32
-    8 * 5 = 40
-    8 * 6 = 48
-    8 * 7 = 56
-    8 * 8 = 64
-    8 * 9 = 72
-    */
-
-
-// 문제 : 할인 대상인지 아닌지 출력해주세요.
-// 조건 : 나이가 19세 이하이거나 60세 이상이면 할인 대상입니다.
-// 조건 : 출력예시 처럼 출력되어야 합니다.
-// 조건 : `구현시작` 부분만 수정 할 수 있습니다.
-// 조건 : 4가지 이상의 방법으로 풀어야 합니다.
-// 조건 : 그 중 2가지 방법은 `&&, ||`없이 풀어야 합니다.
-//        int age = 60; // 이 값을 바꿔가면서 실행해보세요
+//        System.out.println(arr1);
 //
-//        System.out.println("당신의 나이는 " + age + "살 입니다.");
+//        int sum = 0;
+//        for (int i = 0; i < arr1.length; i++) {
 //
-//        if (age <= 19) {
-//            System.out.println("할인대상입니다.");
+//            sum += arr1[i];
+//            System.out.println(arr1[i]);
 //        }
-//        if (age >= 60) {
-//            System.out.println("할인대상입니다.");
-//        }
-//        if (age >= 20) {
-//            if (age < 60) {
-//                System.out.println("할인대상이 아닙니다.");
-//            }
-//        }
+//        System.out.println(sum);
+//        System.out.println(sum / arr1.length);
 
-//        if (age >= 20) {
-//            if (age < 60) {
-//                System.out.println("할인대상이 아닙니다.");
-//            } else if (age <= 19) {
-//                System.out.println("할인대상입니다.");
-//            } else if (age >= 60) {
-//                System.out.println("할인대상입니다.");
-//            }
-//        }
+//        자동차 제네시스 = new 자동차(); // class 명 object 명 = new class명();
+//        // 자동차 car_1;   car_1 = new 자동차();
+//        자동차 포르쉐 = new 자동차();
+////        제네시스.color = "blue";
+////        제네시스.price = "몇천만원";
+////        포르쉐.color = "red";
+////        포르쉐.price = "몇억";
+//
+////        System.out.println(제네시스.color);
+////        System.out.println(제네시스.price);
+////        System.out.println(포르쉐.color);
+////        System.out.println(포르쉐.price);
+//        제네시스.달리다();
+//        포르쉐.달리다();
 
-//        if (age <= 19 || age >= 60) {
-//            System.out.println("할인대상입니다.");
-//        } else {
-//            System.out.println("할인대상이 아닙니다.");
-//        }
+//        charater carick = new charater();
+//        charater carick_1 = new charater();
 //
+//        carick.name = "루피";
+//        carick.age = 20;
+//        carick.height = 175;
 //
-//        if (age >= 20 && age < 60) {
-//            System.out.println("할인대상이 아닙니다.");
-//        } else {
-//            System.out.println("할인대상입니다.");
-//        }
+//        carick_1.name = "조로";
+//        carick_1.age = 30;
+//        carick_1.height = 185;
+//
+//        carick.자기소개();
+//        carick_1.자기소개();
+
+//        자동차 car_1 = new 자동차();
+//        자동차 car_2 = new 자동차();
+//
+//        car_1.번호 = 1;
+//        car_1.속도 = 20;
+//
+//        car_2.번호 = 2;
+//        car_2.속도 = 40;
+
+//        car_1.car(); //함수 실행
+//        car_2.car();
+
+        Person aPerson = new Person();
+        aPerson.나이 = 20;
+        aPerson.인류평균나이 = 20;
+
+        Person bPerson = new Person();
+        bPerson.나이 = 30;
+        bPerson.인류평균나이 += 40;
+
+        Person cPerson = new Person();
+        cPerson.나이 = 30;
+        cPerson.인류평균나이 += 50;
+
+        Person dPerson = new Person();
+        dPerson.나이 = 25;
+        dPerson.인류평균나이 += 30;
+
+        Person.인류평균나이소개();
+
 
     }
 }
+
+class Person {
+    int 나이;
+
+    static int 인류평균나이;
+
+    void 자기소개() {
+        System.out.println("제 나이는" + this.나이 + "살 " + "살입니다.");
+    }
+
+    static void 인류평균나이소개() {
+        System.out.println("인류평균나이는 " + 인류평균나이 / 4 + "살 입니다.");
+    }
+}
+
+
+//class 자동차 {
+//    int 속도;
+//    int 번호;
+//
+//    void car() { //함수 void
+//        System.out.println(this.번호 + "번 자동차는 " + this.속도 + "km로 달린다.");
+//    }
+//
+//}
+
+//
+//class charater {
+//    int age;
+//    int height;
+//    String name;
+//
+//    void 자기소개() {
+//        System.out.println("안녕하세요. 저는 " + this.name + "입니다. 저의 나이는 " + this.age + "살입니다. 저의 키는" + this.height + "cm입니다."); //this.name
+////        System.out.println("저의 나이는 " + age + "살입니다.");//this.age
+////        System.out.println("저의 키는 " + height + "cm입니다.");//this.height
+//    }
+//}
 
