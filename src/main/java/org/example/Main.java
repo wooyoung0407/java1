@@ -22,13 +22,17 @@ class 전사 {
     String weapon2;
     void 공격(String name, String weapon) {
 
-        System.out.println(name + "가(이) " + weapon + "으(로) 공격합니다.");
+//        System.out.println(this.name2 + "가(이) " + this.weapon2 + "으(로) 공격합니다."); //매개변수
 
         this.name2 = name;
         this.weapon2 = weapon;
+        공격출력(this.name2,this.weapon2);
     }
     void 재공격() {
-        System.out.println(this.name2 + "가(이) " + this.weapon2 + "으(로) 공격합니다.");
+//        System.out.println(this.name2 + "가(이) " + this.weapon2 + "으(로) 공격합니다."); //전역변수(전역변수에 매개변수를 받아와서 출력)
+    }
+    void 공격출력(String name, String weapon){
+            System.out.println(this.name2 + "가(이) " + this.weapon2 + "으(로) 공격합니다.");
     }
 }
 
