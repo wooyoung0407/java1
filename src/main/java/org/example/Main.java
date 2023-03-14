@@ -6,32 +6,88 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-        전사 a전사 = new 전사();
 
-        a전사.공격("브라이언", "칼");
-        a전사.재공격();
-        a전사.공격("필립", "창");
-        a전사.재공격();
-        a전사.공격("마크", "지팡이");
-        a전사.재공격();
+//        샤오미TV a샤오미TV = new 샤오미TV();
+//        삼성TV a삼성TV = new 삼성TV();
+//        LGTV aLGTV = new LGTV();
+
+        표준TV a표준TV = new 샤오미TV();
+        a표준TV.켜기();
+        a표준TV.끄기();
+
+
+        표준TV b표준TV = new 삼성TV();
+        b표준TV.켜기();
+        b표준TV.끄기();
+
+
+        표준TV c표준TV = new LGTV();
+        c표준TV.켜기();
+        c표준TV.끄기();
+
+//
+//        a샤오미TV.켜기();
+//        a샤오미TV.끄기();
+//        a샤오미TV.vr켜기();
+//
+//        a삼성TV.켜기();
+//        a삼성TV.끄기();
+//        a삼성TV.vr켜기();
+//
+//        aLGTV.켜기();
+//        aLGTV.끄기();
+//        aLGTV.게임전환모드();
 
     }
 }
 
-class 전사 {
-    String name2;
-    String weapon2;
+abstract class 표준TV {
 
-    void 공격(String name, String weapon) {
-        System.out.printf("%s이(가)  %s(으)로 공격합니다.\n", name, weapon); //c언어 출력
-        System.out.println(name + "이(가) " + weapon + "(으)로 공격합니다."); // JAVA 출력
+    abstract void 켜기();
 
-        this.name2 = name;
-        this.weapon2 = weapon;
+    abstract void 끄기();
+}
+
+class 샤오미TV extends 표준TV {
+    void 켜기() {
+        System.out.println("샤오미TV가 켜집니다.");
     }
 
-    void 재공격() {
-        System.out.printf("%s이(가)  %s(으)로 공격합니다.\n", this.name2, this.weapon2); //c언어 출력
-        System.out.println(this.name2 + "이(가) " + this.weapon2 + "(으)로 공격합니다."); // JAVA 출력
+    void 끄기() {
+        System.out.println("샤오미TV가 꺼집니다.");
+    }
+
+    void vr켜기() {
+        System.out.println("샤오미TV가 vr켜기");
     }
 }
+
+class 삼성TV extends 표준TV {
+    void 켜기() {
+        System.out.println("삼성TV가 켜집니다.");
+    }
+
+    void 끄기() {
+        System.out.println("삼성TV가 꺼집니다.");
+    }
+
+    void vr켜기() {
+        System.out.println("삼성TV가 vr켜기");
+    }
+}
+
+class LGTV extends 표준TV {
+    void 켜기() {
+        System.out.println("LGTV가 켜집니다.");
+    }
+
+    void 끄기() {
+        System.out.println("LGTV가 꺼집니다.");
+    }
+
+    void 게임모드전환() {
+        System.out.println("LGTV가 게임모드전환");
+    }
+}
+
+
