@@ -6,39 +6,29 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
+        전사 a전사 = new 전사();
 
-        검은오리 a검은오리 = new 검은오리();
-        a검은오리.날다();
-        흰오리 a흰오리 = new 흰오리();
-        a흰오리.날다();
-        고무오리 a고무오리 = new 고무오리();
-        a고무오리.날다();
-        고무2오리 a고무2오리 = new 고무2오리();
-        a고무2오리.날다();
-
+        a전사.공격("브라이언", "칼");
+        a전사.재공격();
+        a전사.공격("필립", "창");
+        a전사.공격("마크", "지팡이");
+        a전사.재공격();
+        a전사.재공격();
     }
 }
 
-class 오리 {
-    void 날다() {
-        System.out.println("날개로 날수있다.");
+class 전사 {
+    String name2;
+    String weapon2;
+    void 공격(String name, String weapon) {
+
+        System.out.println(name + "가(이) " + weapon + "으(로) 공격합니다.");
+
+        this.name2 = name;
+        this.weapon2 = weapon;
     }
-}
-
-class 검은오리 extends 오리 {
-
-}
-
-class 흰오리 extends 오리 {
-
-}
-
-class 고무오리 extends 오리 {
-    void 날다() {
-        System.out.println("고무오리는 날수없다.");
+    void 재공격() {
+        System.out.println(this.name2 + "가(이) " + this.weapon2 + "으(로) 공격합니다.");
     }
-}
-
-class 고무2오리 extends 고무오리 {
 }
 
