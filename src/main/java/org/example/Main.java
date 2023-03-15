@@ -6,41 +6,38 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-
-        전사 a전사 = new 전사();
-        a전사.이름 = "카니";
-        a전사.나이 =  22;
-        a전사.a무기 = new 칼(); // 칼 a무기 = new 칼();
-        a전사.공격();
-
-        a전사.이름 = "초코";
-        a전사.a무기 = new 활();
-        a전사.공격();
-
+        int i = 로봇.get정수();
+        boolean b = 로봇.get논리();
+        사람 a사람 = 로봇.get사람();
+//        사람 a사람2 = 로봇.get사람2();
+//        사람 a사람3 = 로봇.get사람3();
+//        사람 a사람4 = 로봇.get사람4();
+//        사람 a사람5 = 로봇.get사람5(123,false);
     }
 }
-
-class 전사 {
-    String 이름;
-    int 나이;
-    무기 a무기;
-    void 공격 (){
-        a무기.공격(this.이름);
+class 로봇 {
+    static int get정수(){
+        return 1;
     }
-
-}
-abstract class 무기 {
-    abstract void 공격(String 이름);
-}
-class 칼 extends 무기 {
-    void 공격 (String 이름 ){
-        System.out.println(이름 + "가 칼로 공격합니다.");
-
+    static boolean get논리(){
+        return true;
     }
+    static 사람 get사람(){
+        return new 사람(); // 사람 a사람 = new 사람();
+   }
+//    static 사람 get사람2(){
+//        return new 사람(); 사람 a사람2 = new사람();
+//    }
+//    static 사람 get사람3(){
+//        return new 사람();
+//    }
+//    static 사람 get사람4(){
+//        return new 사람();
+//    }
+//    static 사람 get사람5(int n,boolean f){
+//        return new 사람();
+//    }
 }
-class 활 extends 무기 {
-    void 공격 (String 이름){
-        System.out.println(이름 + "가 활로 공격합니다.");
-    }
-}
+class 사람{}
+
 
