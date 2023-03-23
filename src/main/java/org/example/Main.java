@@ -6,78 +6,63 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-        전사 a전사 = new 홍길동();
-        a전사.a무기 = new 활();
+        병사 a병사 = new 병사();
+        a병사.이름 = "홍길동";
 
-        a전사.공격();
-        // 출력 => 홍길동이(가) 활(으)로 공격합니다.
+        a병사.자기소개();
+        // 안녕하세요. 저는 홍길동 이병 입니다.
+        a병사.공격();
 
-        a전사 = new 홍길순();
+        a병사.진급();
 
-        a전사.공격();
-        // 출력 => 홍길순이(가) 칼(으)로 공격합니다.
+        a병사.자기소개();
+        a병사.공격();
+        // 안녕하세요. 저는 홍길동 일병 입니다.
 
-        a전사.a무기 = new 창();
-        a전사.공격();
-        // 출력 => 홍길순이(가) 창(으)로 공격합니다.
+        a병사.진급();
+
+        a병사.자기소개();
+        a병사.공격();
+
     }
-
 }
-abstract class 전사 {
+class 병사 {
     String 이름;
-    무기 a무기;
-    void 공격() {
-        a무기.공격(this.이름);
+    int 계급번호;
+    int 공격력;
 
+    병사() {
+        계급번호 = 1;
+        공격력 = 7;
+    }
+
+    String get계급() {
+
+        String 계급 = "";
+
+        if ( 계급번호 == 1 ) {
+            계급 = "이병";
+        }else if ( 계급번호 == 2 ) {
+            계급 = "일병";
+        }else if ( 계급번호 == 3 ) {
+            계급 = "상병";
+        }else if ( 계급번호 == 4 ) {
+            계급 = "병장";
+        }
+
+        return 계급;
+    }
+
+    void 자기소개() {
+        System.out.println("안녕하세요. 저는 " + this.이름 + this.get계급() + " 입니다.");
+    }
+
+    void 진급() {
+        계급번호++;
+        공격력+=2;
+    }
+    void 공격(){
+        System.out.println(this.이름 + this.get계급() + "이 공격합니다.(공격력 :" + this.공격력 +")");
     }
 }
-class 홍길동 extends 전사 {
-    홍길동 () {
-        this.이름 = "홍길동";
-    }
-}
-class 홍길순 extends 전사 {
-    홍길순 () {
-        this.이름 = "홍길순";
-        this.a무기 = new 칼();
-    }
-}
 
-abstract class 무기 {
-    String weapon;
-
-    abstract void 공격(String name);
-
-    // void 공격(String name){
-    // System.out.println(name + "이(가)" + weapon + "(으)로 공격합니다.");
-    //}
-}
-class 활 extends 무기 {
-
-    void 공격(String name) {
-        weapon = "활";
-        System.out.println(name + "이(가)" + weapon + "(으)로 공격합니다.");
-    }
-//   활() {
-//       weapon = "활";
-//   }
-
-}
-class 칼 extends 무기 {
-    void 공격(String name) {
-        weapon = "칼";
-        System.out.println(name + "이(가)" + weapon + "(으)로 공격합니다.");
-    }
-//    칼() {
-//        weapon = "칼";
-//    }
-}
-class 창 extends 무기 {
-    void 공격(String name) {
-        weapon = "창";
-        System.out.println(name + "이(가)" + weapon + "(으)로 공격합니다.");
-    }
-//    창() {
-//        weapon = "창";
-//    }
-}
