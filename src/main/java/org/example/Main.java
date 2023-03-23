@@ -23,7 +23,7 @@ public class Main {
     }
 
 }
-class 전사 {
+abstract class 전사 {
     String 이름;
     무기 a무기;
     void 공격() {
@@ -43,25 +43,41 @@ class 홍길순 extends 전사 {
     }
 }
 
-class 무기 {
+abstract class 무기 {
     String weapon;
-    void 공격(String name) {
-        System.out.println(name + "이(가)" + weapon + "(으)로 공격합니다.");
-    }
+
+    abstract void 공격(String name);
+
+    // void 공격(String name){
+    // System.out.println(name + "이(가)" + weapon + "(으)로 공격합니다.");
+    //}
 }
 class 활 extends 무기 {
-   활() {
-       weapon = "활";
-   }
+
+    void 공격(String name) {
+        weapon = "활";
+        System.out.println(name + "이(가)" + weapon + "(으)로 공격합니다.");
+    }
+//   활() {
+//       weapon = "활";
+//   }
 
 }
 class 칼 extends 무기 {
-    칼() {
+    void 공격(String name) {
         weapon = "칼";
+        System.out.println(name + "이(가)" + weapon + "(으)로 공격합니다.");
     }
+//    칼() {
+//        weapon = "칼";
+//    }
 }
 class 창 extends 무기 {
-    창() {
+    void 공격(String name) {
         weapon = "창";
+        System.out.println(name + "이(가)" + weapon + "(으)로 공격합니다.");
     }
+//    창() {
+//        weapon = "창";
+//    }
 }
