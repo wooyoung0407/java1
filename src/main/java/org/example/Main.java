@@ -6,22 +6,20 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
+        사람 a사람 = new 사람();
 
-        계산기 a계산기 = new 계산기();
+        a사람.set_id(20);  // set_id
 
-        System.out.println(a계산기.더하기(10,20));
-        System.out.println(a계산기.더하기(10,20,30));
-        System.out.println(a계산기.더하기(10.5,20,30));
+        System.out.println("제 번호는 "+ a사람.get_id() + "입니다."); // get_id
     }
 }
-class 계산기{
-    int 더하기(int x,int y){
-        return x+y;
+class 사람{
+    private int id; // 접근제한자
+
+    void set_id(int id){
+        this.id = id;
     }
-    int 더하기(int x, int y, int z){
-        return x+y+z;
-    }
-    double 더하기(double x, double y , double z){
-        return x+y+z;
+    int get_id(){
+        return this.id;
     }
 }
