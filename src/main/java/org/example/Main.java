@@ -1,25 +1,43 @@
 package org.example;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.sql.SQLOutput;
-
 public class Main {
     public static void main(String[] args) {
-        사람 a사람 = new 사람();
+        저장소<Integer> a저장소1 = new 저장소<>();
 
-        a사람.set_id(20);  // set_id
+        a저장소1.setData(30);
+        int a = a저장소1.getData();
 
-        System.out.println("제 번호는 "+ a사람.get_id() + "입니다."); // get_id
+        System.out.println(a);
+
+        저장소<Double> a저장소2 = new 저장소<>();
+
+        a저장소2.setData(5.5);
+        double b = a저장소2.getData();
+
+        System.out.println(b);
+
+
+        저장소<사과> a저장소3 = new 저장소<>();
+
+        a저장소3.setData(new 사과());
+        사과 c = a저장소3.getData();
+
+        System.out.println(c);
+
     }
 }
-class 사람{
-    private int id; // 접근제한자
 
-    void set_id(int id){
-        this.id = id;
+class 저장소<T>{
+    Object data;
+
+    T getData(){
+        return (T)data;
     }
-    int get_id(){
-        return this.id;
+
+    void setData(T data){
+        this.data = data;
     }
 }
+class 사과 {
+}
+
