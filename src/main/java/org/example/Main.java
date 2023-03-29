@@ -5,29 +5,34 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> al = new ArrayList<Integer>();
-        al.add(10);
-        al.add(20);
-        al.add(30);
-        al.add(40);
-        al.add(50);
 
-        System.out.println(al.get(0) + al.get(1) + al.get(2) + al.get(3) + al.get(4));
-        System.out.println(al.size());
-        al.add(60);
-        System.out.println(al.size());
-        al.add(70);
-        System.out.println(al.size());
+        new Solution().run();
+//        Person Person1 = new Person("홍길동", 22, 173.5);
+//        Person Person2 = new Person("이순신", 40, 172);
 
-        HashMap<String, Integer> arrMap = new HashMap<String, Integer>();
-
-        arrMap.put("영희", 10); // "영희" = 인덱스 뒤가 값
-        arrMap.put("철수", 20);
-        arrMap.put("길동", 30);
-
-        System.out.println("영희 나이 : " + arrMap.get("영희"));
-        System.out.println("철수 나이 : " + arrMap.get("철수"));
-        System.out.println("길동 나이 : " + arrMap.get("길동"));
 
     }
 }
+class Solution {
+
+    void run (){
+        Person Person1 = new Person("홍길동", 22, 170.5);
+        Person Person2 = new Person("이순신", 40, 173.2);
+    }
+}
+
+class Person {
+    String Name;
+    int Age;
+    double Height;
+
+    Person(String name, int age, double height) {
+        this.Name = name;
+        this.Age = age;
+        this.Height = height;
+
+        System.out.println("이름 : " + name + " 나이 : " + age + "살 키 : " + height + "cm");
+    }
+
+}
+
