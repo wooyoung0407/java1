@@ -1,43 +1,22 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        저장소<Integer> a저장소1 = new 저장소<>();
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        // HashMap<String,integer> arrMap = new HashMap<String,integer>();
+        al.add(10);
+        al.add(20);
+        al.add(30);
+        al.add(40);
+        al.add(50);
 
-        a저장소1.setData(30);
-        int a = a저장소1.getData();
-
-        System.out.println(a);
-
-        저장소<Double> a저장소2 = new 저장소<>();
-
-        a저장소2.setData(5.5);
-        double b = a저장소2.getData();
-
-        System.out.println(b);
-
-
-        저장소<사과> a저장소3 = new 저장소<>();
-
-        a저장소3.setData(new 사과());
-        사과 c = a저장소3.getData();
-
-        System.out.println(c);
-
+        System.out.println(al.get(0) + al.get(1) + al.get(2) + al.get(3) + al.get(4));
+        System.out.println(al.size());
+        al.add(60);
+        System.out.println(al.size());
+        al.add(70);
+        System.out.println(al.size());
     }
 }
-
-class 저장소<T>{
-    Object data;
-
-    T getData(){
-        return (T)data;
-    }
-
-    void setData(T data){
-        this.data = data;
-    }
-}
-class 사과 {
-}
-
