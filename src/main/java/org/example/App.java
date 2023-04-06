@@ -25,8 +25,18 @@ public class App {
                 wiseSayingController.write();
             } else if (command.equals("목록")) {
                 wiseSayingController.list();
-            } else if (command.equals("삭제")){
+            }   else if (command.startsWith("삭제")){
+                String[] commandList = command.split("//?",2);
+                // 삭제
+                String actionName = commandList[0];
+                // id=1
+                String[] strList = commandList[1].split("=",2);
+                // key
+                String key =strList[0];
+                //value
+                String value = strList[1];
 
+                wiseSayingController.remove();
             }
         }
     }
