@@ -6,22 +6,17 @@ import org.example.wisesaying.controller.WiseSayingController;
 import java.util.Scanner;
 
 public class App {
-    private final Scanner sc;
-
-    public App(Scanner sc) {
-        this.sc = sc;
-    }
 
     public void run() {
         System.out.println("== 명언 앱 ==");
 
-        WiseSayingController wiseSayingController= new WiseSayingController(this.sc);
+        WiseSayingController wiseSayingController= new WiseSayingController();
         SystemController systemController = new SystemController();
 
         while (true) {
 
             System.out.println("명언)");
-            String command = sc.nextLine().trim();
+            String command = Container.getScanner().nextLine().trim();
 
             if (command.equals("종료")) {
                 systemController.exit();

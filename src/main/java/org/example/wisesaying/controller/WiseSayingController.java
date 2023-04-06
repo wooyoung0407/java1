@@ -1,27 +1,26 @@
 package org.example.wisesaying.controller;
 
+import org.example.Container;
 import org.example.wisesaying.entitity.WiseSaying;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WiseSayingController {
-    private final Scanner sc;
     private int number;
 
     private ArrayList<WiseSaying> wiseSayings;
 
-    public WiseSayingController(Scanner sc) {
-        this.sc = sc;
+    public WiseSayingController() {
         this.number = 1;
         this.wiseSayings = new ArrayList<>();
     }
 
     public void write() {
         System.out.println("명언 : ");
-        String content = sc.nextLine().trim();
+        String content = Container.getScanner().nextLine().trim();
         System.out.println("작가 : ");
-        String name = sc.nextLine().trim();
+        String name = Container.getScanner().nextLine().trim();
 
         WiseSaying wiseSaying = new WiseSaying(number, name, content);
         System.out.println(number + "번 명언이 등록되었습니다.\n");
